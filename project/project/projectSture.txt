@@ -1,0 +1,21 @@
+● project
+|
++---● people_register (app folder)
+|   |
+|   +--● migrations (includes files related to migrations)
+|   |  
+|   +--● templates
+|   |  |--● people_register
+|   |  |  |--base.html
+|   |  |  |--people_form.html
+|   |  |  |--people_list.html
+|   | 
+|   |-- models.py
+|   |-- forms.py
+|   |-- urls.py
+|   |-- views.py
+|
++---● employee_project (project folder)
+|   |
+|   |--settings.py 
+|   |--urls.py

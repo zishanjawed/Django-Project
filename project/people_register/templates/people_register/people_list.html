@@ -1,0 +1,77 @@
+{% extends 'people_register/base.html' %} {% block content %}
+<table class="table table-boaderless">
+    <thead class="border_bottom font-weight-bold">
+        <td>Name</td>
+        <td>Pan Number</td>
+        <td>Age</td>
+        <td>Gender</td>
+        <td>Email</td>
+        <td>City</td>
+        <td>Action</td>
+        <td>
+            <a href="{% url 'people_insert' %}" class="btn btn-outline-success">New</a>
+        </td>
+    </thead>
+    <tbody>
+        {% for people in users %}
+        <tr>
+            <td>{{people.name}}</td>
+            <td>{{people.pan_number}}</td>
+            <td>{{people.age}}</td>
+            <td>{{people.gender}}</td>
+            <td>{{people.email}}</td>
+            <td>{{people.city}}</td>
+            <td>
+                <a href="{% url 'people_update' people.id %}" class="btn test_secoundry px-0">
+                    <i class="far fa-edit fa-lg"></i>
+                </a>
+                <form action="{% url 'people_delete' people.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">
+                        <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                    </button>
+                </form>
+
+            </td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+
+</table>
+<nav aria-label="...">
+    {% if users.has_other_pages %}
+    <ul class="pagination justify-content-center">
+        {% if users.has_previous %}
+        <!-- <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li> -->
+        <li class="page-item ">
+            <a class="page-link" href="?page={{ users.previous_page_number }}">Previous</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <span class="page-link">Previous</span>
+        </li>
+        {% endif %} {% for i in users.paginator.page_range %} {% if users.number == i %}
+        <li class="page-item active ">
+
+            <a class="page-link"><span>{{i}}</span><span class="sr-only">(current)</span> </a>
+        </li>
+        </li>
+        {% else %}
+        <li class="page-item ">
+            <a class="page-link" href="?page={{ i }}">{{i}}</a>
+        </li>
+
+        {% endif %} {% endfor %} {% if users.has_next %}
+
+        <li class="page-item ">
+            <a class="page-link" href="?page={{ users.next_page_number }}">Next</a>
+        </li>
+        {% else %}
+
+        <li class="page-item disabled">
+            <span class="page-link">Next</span>
+        </li>
+        {% endif %} {% endif %}
+</nav>
+{%endblock content%}
