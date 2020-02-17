@@ -33,7 +33,7 @@ git clone "git@github.com:zishanjawed/Django-Project.git"
 
 #### 5. Install requirements
 ```bash
-cd simple-django-project/
+cd Django-Project/
 pip install -r requirements.txt
 ```
 
