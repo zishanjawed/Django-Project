@@ -85,4 +85,4 @@ Now you are good to go.
 
 ### 9. URLs
 #### Add People : [http://localhost:8001/people](http://localhost:8001/people)
-[Imgur](https://i.imgur.com/xbnAaa9.png)
+![](https://i.imgur.com/xbnAaa9.png)
