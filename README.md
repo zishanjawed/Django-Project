@@ -86,3 +86,9 @@ Now you are good to go.
 ### 9. URLs
 #### Add People : [http://localhost:8001/people](http://localhost:8001/people)
 ![](https://i.imgur.com/xbnAaa9.png)
+#### Fill The Imformation and click Add botton
+![](https://i.imgur.com/2IT0RBC.png)
+##### Now you will be redirected to /people/list  page
+#### Add People : [http://localhost:8001/people/list](http://localhost:8001/people/list)
+![](https://i.imgur.com/YLwkwW8.png)
+##### Here you can use the pagination below. Click on the New button to add another record
